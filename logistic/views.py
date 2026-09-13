@@ -33,8 +33,3 @@ class StockViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['products']
     pagination_class = StockPagination
-
-
-@api_view(['GET'])
-def sample_view(request):
-    return Response({'message': 'Successful deploy!'})

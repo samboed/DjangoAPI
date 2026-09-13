@@ -1,52 +1,52 @@
-# примеры API-запросов
+# examples of API-requests
 
-@baseUrl = http://localhost:8000/api/v1
+@baseUrl = http://localhost:8081/api/v1
 
-# создание продукта
+# product creation
 POST {{baseUrl}}/products/
 Content-Type: application/json
 
 {
-  "title": "Огурец",
-  "description": "Лучшие огурцы на рынке"
+  "title": "Cucumber",
+  "description": "The best cucumbers at the market"
 }
 
 ###
 
-# получение продуктов
+# receipt of products
 GET {{baseUrl}}/products/
 Content-Type: application/json
 
 ###
 
-# обновление продукта
+# product update
 PATCH {{baseUrl}}/products/2/
 Content-Type: application/json
 
 {
-  "description": "Самые сочные и ароматные помидорки"
+  "description": "The juiciest and most aromatic tomatoes"
 }
 
 ###
 
-# удаление продукта
+# product removal
 DELETE {{baseUrl}}/products/1/
 Content-Type: application/json
 
 ###
 
-# поиск продуктов по названию и описанию
+# search for products by name and description
 GET {{baseUrl}}/products/?search=рын
 Content-Type: application/json
 
 ###
 
-# создание склада
+# stock creation
 POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
 {
-  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru3",
+  "address": "my address",
   "positions": [
     {
       "product": 2,
@@ -63,7 +63,7 @@ Content-Type: application/json
 
 ###
 
-# обновляем записи на складе
+# updating warehouse records
 PATCH {{baseUrl}}/stocks/7/
 Content-Type: application/json
 
@@ -84,6 +84,6 @@ Content-Type: application/json
 
 ###
 
-# поиск складов, где есть определенный продукт
+# searching for warehouses that stock a specific product
 GET {{baseUrl}}/stocks/?products=2
 Content-Type: application/json
